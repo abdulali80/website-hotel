@@ -403,7 +403,7 @@
 
                 <!-- Food Item 3 -->
                 <div class="food-card">
-                    <img src= "assets/image/t3.webp" alt="Chicken Reshmi Kabab Roll" class="food-image">
+                    <img src="assets/image/t3.webp" alt="Chicken Reshmi Kabab Roll" class="food-image">
                     <div class="food-name">Chicken Reshmi Kabab Roll</div>
                     <div class="food-price">Rs. 320</div>
                 </div>
@@ -580,7 +580,7 @@
                     <i class="fa-solid fa-share-nodes" id="shareBtn"></i>
                     <i class="fa-solid fa-xmark" id="closePopup"></i>
                 </div>
-                
+
                 <div class="share-menu" id="shareMenu">
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -617,7 +617,7 @@
                     <div class="special-instructions">
                         <textarea placeholder="Enter special instructions here"></textarea>
                     </div>
-                
+
                     <div class="cart-contain">
                         <div class="qty-controls">
                             <button class="qty-button decrease">−</button>
@@ -968,6 +968,14 @@
         <div class="search-btn" id="scroll-to-search">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
+
+    </section>
+
+    <section id="whatsapp">
+        <!-- WhatsApp Floating Icon -->
+        <a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank" id="whatsappBtn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
 
     </section>
 
@@ -1631,6 +1639,19 @@
 
     prevBtn.addEventListener('click', () => {
         scrollContainer.scrollBy({ left: -150, behavior: 'smooth' });
+    });
+</script>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const btn = document.getElementById('whatsappBtn');
+        const halfPage = document.documentElement.scrollHeight / 2;
+
+        if (window.scrollY > halfPage) {
+            btn.style.display = 'block';
+        } else {
+            btn.style.display = 'none';
+        }
     });
 </script>
 
