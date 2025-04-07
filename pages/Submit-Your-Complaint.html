@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,8 @@
     <style>
         /* General Styles */
         body {
-            background-color: #111;
-            color: #d4af37;
+            background-color: #fff;
+            color: black;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
@@ -31,11 +32,12 @@
 
         /* Complaint Container */
         .complaint-container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: auto;
             padding: 20px;
-            background: #111;
+            background: #fff;
             border-radius: 8px;
+            margin-top: 40px;
         }
 
         /* Section Headings */
@@ -54,16 +56,16 @@
         }
 
         .brand-btn {
-            border: 2px solid #d4af37;
+            border: 2px solid #ccc;
             padding: 10px 15px;
             border-radius: 6px;
             background: transparent;
-            color: white;
+            color: black;
             cursor: pointer;
         }
 
         .brand-btn.active {
-            background-color: #d4af37;
+            background-color: #ccc;
             border-color: black;
         }
 
@@ -72,26 +74,28 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
+            display: none;
+            /* Initially hidden */
         }
 
         .complaint-btn {
-            border: 2px solid #d4af37;
+            border: 2px solid #ccc;
             padding: 10px 15px;
             border-radius: 6px;
             background: transparent;
-            color: white;
+            color: black;
             cursor: pointer;
         }
 
         .complaint-btn.active {
-            background-color: #d4af37;
+            background-color: #ccc;
             border-color: black;
         }
 
         /* Form Fields */
         .form-group-container {
-            display: none; /* Initially hidden */
+            display: none;
+            /* Initially hidden */
         }
 
         .form-group {
@@ -105,14 +109,15 @@
         .form-group input {
             width: 100%;
             padding: 10px;
-            background: black;
-            border: 1px solid #d4af37;
-            color: white;
+            background: white;
+            border: 1px solid #ccc;
+            color: black;
             border-radius: 5px;
         }
 
         .form-group select {
-            max-width: 120px; /* Dropdown size */
+            max-width: 120px;
+            /* Dropdown size */
         }
 
         /* File Upload Section */
@@ -123,14 +128,15 @@
         .file-label {
             margin-bottom: 5px;
             font-size: 14px;
+            color: black;
         }
 
         .file-upload {
-            background: black;
+            background: white;
             padding: 30px;
             border-radius: 8px;
             text-align: center;
-            border: 2px dashed #d4af37;
+            border: 2px dashed #ccc;
             cursor: pointer;
             margin-bottom: 5px;
             position: relative;
@@ -144,11 +150,12 @@
             display: block;
             margin-top: 10px;
             font-size: 14px;
+            color: black;
         }
 
         .file-size-info {
             font-size: 12px;
-            color: #d4af37;
+            color: black;
         }
 
         /* Hidden File Input */
@@ -160,7 +167,7 @@
         .submit-btn {
             width: 100%;
             padding: 12px;
-            background: #d4af37;
+            background: black;
             border: none;
             color: white;
             font-size: 16px;
@@ -169,10 +176,12 @@
         }
 
         .submit-btn:hover {
-            background: black;
+            background-color: #141414;
+            transform: scale(1.03);
         }
     </style>
 </head>
+
 <body>
 
     <!-- Banner Section -->
@@ -269,6 +278,5 @@
     </script>
 
 </body>
+
 </html>
-
-

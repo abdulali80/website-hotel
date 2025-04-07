@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Popup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .popup {
+      width: 90%;
+      max-width: 1000px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      display: flex;
+      flex-direction: row;
+      max-height: 90vh;
+    }
+    .popup-left {
+      width: 50%;
+      background: #fff;
+      border-right: 2px solid #ccc;
+    }
+    .popup-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .popup-right {
+      width: 50%;
+      padding: 24px;
+      overflow-y: auto;
+      position: relative;
+    }
+    .top-icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+    .top-icons button {
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+    .deal-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .deal-price {
+      font-size: 20px;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+    .deal-subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-top: 4px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-weight: 600;
+      margin: 16px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .required-label {
+      background: #ffcc00;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+    .roll-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .roll-option label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .roll-option button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 6px 18px;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .instructions {
+      margin-top: 20px;
+    }
+    .instructions textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: none;
+    }
+    .cart-contain {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .qty-button {
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 6px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .qty-minus {
+      background: #ccc;
+      color: black;
+    }
+    .qty-plus {
+      background: black;
+      color: white;
+    }
+    .qty-display {
+      font-size: 18px;
+      font-weight: bold;
+      min-width: 20px;
+      text-align: center;
+    }
+    .cart-box {
+      display: flex;
+      align-items: center;
+      background: black;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-grow: 1;
+      padding: 0 10px;
+      justify-content: space-between;
+    }
+    .cart-price {
+      color: #c5a834;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 18px;
+    }
+    .cart-button {
+      background: black;
+      color: #c5a834;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .cart-symbol {
+      font-size: 16px;
+      background-color: #c5a834;
+      color: white;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="popup">
+  <div class="popup-left">
+    <img src="/assets/image/t3.webp" alt="Deal Image">
+  </div>
+  <div class="popup-right">
+    <div class="top-icons">
+      <button onclick="alert('Share!')">🔗</button>
+      <button onclick="document.querySelector('.popup').style.display='none'">✖️</button>
+    </div>
+
+    <p class="deal-title">Deal 1</p>
+    <p class="deal-price">Rs. 499</p>
+    <p class="deal-subtitle">Any 2 Chicken Roll</p>
+
+    <div class="section-title">
+      <span>Choose Your Chicken Rolls</span>
+      <span class="required-label">required</span>
+    </div>
+    <small>Select 1 more</small>
+
+    <div class="roll-option">
+      <label><input type="checkbox" checked> Crispy Chicken Roll</label>
+      <div class="qty-control" id="crispy-controls">
+        <button onclick="adjustQty('crispy', -1)">➖</button>
+        <span class="qty-value" id="crispy-qty">1</span>
+        <button onclick="adjustQty('crispy', 1)">➕</button>
+      </div>
+    </div>
+
+    <div class="roll-option">
+      <label><input type="checkbox" onclick="toggleAdd(this, 'reshmi')"> Chicken Reshmi Kabab Roll</label>
+      <button id="reshmi-btn" onclick="toggleQty('reshmi')">Add</button>
+    </div>
+
+    <div class="roll-option">
+      <label><input type="checkbox" onclick="toggleAdd(this, 'bihari')"> Chicken Bihari Roll</label>
+      <button id="bihari-btn" onclick="toggleQty('bihari')">Add</button>
+    </div>
+
+    <div class="roll-option">
+      <label><input type="checkbox" onclick="toggleAdd(this, 'malai')"> Malai Boti Roll</label>
+      <button id="malai-btn" onclick="toggleQty('malai')">Add</button>
+    </div>
+
+    <div class="instructions">
+      <p class="section-title">Special Instructions</p>
+      <textarea rows="3" placeholder="Please enter instructions about this item"></textarea>
+    </div>
+
+    <div class="cart-contain">
+      <div class="qty-controls">
+        <button class="qty-button qty-minus" onclick="adjustQty('main', -1)">−</button>
+        <span class="qty-display" id="main-qty">1</span>
+        <button class="qty-button qty-plus" onclick="adjustQty('main', 1)">+</button>
+      </div>
+      <div class="cart-box">
+        <div class="cart-price" id="price">Rs. 499</div>
+        <button class="cart-button">
+          Add to Cart <span class="cart-symbol">➤</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let crispyQty = 1;
+  let mainQty = 1;
+
+  function adjustQty(type, delta) {
+    if (type === 'crispy') {
+      crispyQty = Math.max(0, crispyQty + delta);
+      document.getElementById('crispy-qty').innerText = crispyQty;
+    } else if (type === 'main') {
+      mainQty = Math.max(1, mainQty + delta);
+      document.getElementById('main-qty').innerText = mainQty;
+      document.getElementById('price').innerText = 'Rs. ' + (499 * mainQty);
+    }
+  }
+
+  function toggleAdd(checkbox, id) {
+    const btn = document.getElementById(`${id}-btn`);
+    if (checkbox.checked) {
+      btn.innerText = 'Delete';
+    } else {
+      btn.innerText = 'Add';
+    }
+  }
+
+  function toggleQty(id) {
+    const checkbox = document.querySelector(`input[onclick*="${id}"]`);
+    checkbox.checked = !checkbox.checked;
+    toggleAdd(checkbox, id);
+  }
+</script>
+
+</body>
+</html>

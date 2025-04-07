@@ -15,7 +15,7 @@
     <section id="checkout">
         <!-- Logo Section -->
         <div class="logo-container">
-            <img src="/assets/image/logo.webp" alt="Logo">
+            <a href="/index.html"><img src="/assets/image/logo.webp" alt="Logo"></a>
         </div>
 
         <!-- Checkout Container -->
@@ -23,6 +23,7 @@
 
             <!-- Left Section: Order Details -->
             <div class="checkout-left">
+            
                 <div class="order-type">
                     <p>This is a <strong>TAKEAWAY ORDER</strong> 📦</p>
                     <p>You have to collect your order from</p>
@@ -31,9 +32,12 @@
                 <div class="restaurant-info">
                     <h3>Angethi Dha</h3>
                     <p><strong>Location:</strong> Shahbaz Commercial Area, Karachi</p>
-                    <a href="#" class="view-location">View Location<a class="loact-icon"> <i class="fa-solid fa-location-dot"></a></i> </a>
+                    <a href="#" class="view-location">View Location<a class="loact-icon"> <i
+                                class="fa-solid fa-location-dot"></a></i> </a>
                     <p class="number"><strong class="head">Phone:</strong> (021) 38899996</p>
                 </div>
+
+           
 
                 <h5 class="headind-main">JUST A LAST STEP, PLEASE FILL YOUR INFORMATION BELOW</h5>
 
@@ -49,18 +53,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Full Name <span class="required">*</span></label>
+                            <label>Full Name <span class="required"> (required)*</span></label>
                             <input type="text" placeholder="Full Name">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>Email <span class="required">*</span></label>
+                        <label>Email<span class="required"> (required)*</span></label>
                         <input type="email" placeholder="Enter your email">
                     </div>
 
                     <div class="form-group">
-                        <label>Mobile Number <span class="required">*</span></label>
+                        <label>Mobile Number <span class="required">(required)*</span></label>
                         <input type="tel" placeholder="03xx-xxxxxxx">
                     </div>
 
@@ -72,9 +76,15 @@
                     <!-- <h4>Payment Information</h4> -->
                     <p class="last-heading">Payment Information</p>
                     <div class="payment-options">
-                        <button type="button" class="payment-btn" id="cash-payment">💵 Cash on Delivery</button>
-                        <button type="button" class="payment-btn" id="online-payment">💳 Online Payment</button>
+                        <button type="button" class="payment-btn" id="cash-payment">
+                            <img src="https://img.icons8.com/fluency/48/000000/cash-in-hand.png" alt="Cash Icon" />
+                            Cash on Delivery</button>
+                        <button type="button" class="payment-btn" id="online-payment">
+                            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" />
+                            <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="MasterCard" />
+                            Online Payment</button>
                     </div>
+
 
                     <div id="online-payment-methods">
                         <p class="card-heading">Card Number</p>
@@ -116,6 +126,7 @@
                         <p>Grand Total:</p>
                         <p>Rs. 8625</p>
                     </div>
+                      
 
                     <input type="text" placeholder="Enter Voucher / Promo code">
                     <button class="apply-btn">Apply</button>
